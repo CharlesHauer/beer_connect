@@ -40,11 +40,13 @@ class _ScanScreenState extends State<ScanScreen> {
       return Container();
     }
 
+    final size = MediaQuery.of(context).size;
+
     return Scaffold(
-      body: Stack(
-        children: [
-          CameraPreview(_cameraController),
-        ],
+      body: SizedBox(
+        width: size.width,
+        height: size.height,
+        child: CameraPreview(_cameraController),
       ),
     );
   }
