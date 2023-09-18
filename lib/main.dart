@@ -1,14 +1,25 @@
 import 'package:beer_connect/screens/ScanScreen.dart';
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+Future<List<CameraDescription>> setupCameras() async {
+  List<CameraDescription> cameras;
+  cameras = await availableCameras();
+  return cameras;
+}
+
+
+Future<void> main() async {
+  List<CameraDescription> cameras;
+  WidgetsFlutterBinding.ensureInitialized();
+  cameras = await setupCameras();
+  runApp(MyApp(cameras: cameras,));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final List<CameraDescription> cameras;
+  const MyApp({super.key, required this.cameras});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,7 +28,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const ScanScreen(),
+      home: ScanScreen(cameras: cameras,),
     );
   }
 }
