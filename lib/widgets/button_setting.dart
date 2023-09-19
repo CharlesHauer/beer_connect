@@ -10,7 +10,7 @@ class ButtonSetting extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         shape: const CircleBorder(),
         backgroundColor: Colors.yellow,
-        side: const BorderSide(color: Colors.black, width: 1),
+        side: const BorderSide(color: Colors.black, width: 1.5),
       ),
       child: const Icon(
         Icons.settings,

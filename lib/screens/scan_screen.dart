@@ -1,3 +1,4 @@
+import 'package:beer_connect/widgets/button_scan.dart';
 import 'package:beer_connect/widgets/button_search.dart';
 import 'package:beer_connect/widgets/button_setting.dart';
 import 'package:camera/camera.dart';
@@ -48,30 +49,36 @@ class _ScanScreenState extends State<ScanScreen> {
 
     final size = MediaQuery.of(context).size;
 
-    return SafeArea(
-      child: Stack(
-        children: <Widget>[
-          SizedBox(
-            width: size.width,
-            height: size.height,
-            child: CameraPreview(_cameraService.cameraController!),
-          ),
-          const Column(
-            children: [
-              Padding(padding: EdgeInsets.only(bottom: 20)),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    ButtonSearch(),
-                    ButtonSetting(),
-                  ],
+    return Scaffold(
+      body: SafeArea(
+        child: Stack(
+          children: <Widget>[
+            SizedBox(
+              width: size.width,
+              height: size.height,
+              child: CameraPreview(_cameraService.cameraController!),
+            ),
+            const Column(
+              children: [
+                Padding(padding: EdgeInsets.only(bottom: 20)),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ButtonSearch(),
+                      ButtonSetting(),
+                    ],
+                  ),
                 ),
-              ),
-            ],
-          ),
-        ],
+              ],
+            ),
+            const Align(
+              alignment: Alignment.bottomCenter,
+              child: ButtonScan()
+            )
+          ],
+        ),
       ),
     );
   }
