@@ -49,36 +49,34 @@ class _ScanScreenState extends State<ScanScreen> {
 
     final size = MediaQuery.of(context).size;
 
-    return Scaffold(
-      body: SafeArea(
-        child: Stack(
-          children: <Widget>[
-            SizedBox(
-              width: size.width,
-              height: size.height,
-              child: CameraPreview(_cameraService.cameraController!),
-            ),
-            const Column(
-              children: [
-                Padding(padding: EdgeInsets.only(bottom: 20)),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ButtonSearch(),
-                      ButtonSetting(),
-                    ],
-                  ),
+    return SafeArea(
+      child: Stack(
+        children: <Widget>[
+          SizedBox(
+            width: size.width,
+            height: size.height,
+            child: CameraPreview(_cameraService.cameraController!),
+          ),
+          const Column(
+            children: [
+              Padding(padding: EdgeInsets.only(bottom: 20)),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ButtonSearch(),
+                    ButtonSetting(),
+                  ],
                 ),
-              ],
-            ),
-            const Align(
-              alignment: Alignment.bottomCenter,
-              child: ButtonScan()
-            )
-          ],
-        ),
+              ),
+            ],
+          ),
+          const Align(
+            alignment: Alignment.bottomCenter,
+            child: ButtonScan()
+          )
+        ],
       ),
     );
   }
