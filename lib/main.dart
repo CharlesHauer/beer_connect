@@ -1,4 +1,5 @@
-import 'package:beer_connect/screens/scan_screen.dart';
+import 'package:beer_connect/screens/home_screen.dart';
+import 'package:beer_connect/utils/theme.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
@@ -20,11 +21,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellow),
+        colorScheme: ColorScheme.fromSeed(seedColor: AppTheme.primaryYellow,),
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const ScanScreen(),
+      home: const HomeScreen(),
     );
   }
 }
