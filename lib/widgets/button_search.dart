@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../utils/theme.dart';
+
 class ButtonSearch extends StatelessWidget {
   const ButtonSearch({super.key});
 
@@ -9,7 +11,7 @@ class ButtonSearch extends StatelessWidget {
       onPressed: () {},
       style: ElevatedButton.styleFrom(
         shape: const CircleBorder(),
-        backgroundColor: Colors.yellow,
+        backgroundColor: AppTheme.primaryYellow,
         side: const BorderSide(color: Colors.black, width: 1.5),
       ),
       child: const Icon(

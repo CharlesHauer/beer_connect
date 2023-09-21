@@ -1,5 +1,6 @@
 import 'package:beer_connect/screens/help_screen.dart';
 import 'package:beer_connect/screens/scan_screen.dart';
+import 'package:beer_connect/utils/theme.dart';
 import 'package:flutter/material.dart';
 
 import 'history_screen.dart';
@@ -30,6 +31,12 @@ class _HomeScreenState extends State<HomeScreen> {
       ][_currentIndex],
 
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.black,
+        selectedItemColor: AppTheme.primaryYellow,
+        unselectedItemColor: Colors.white,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        iconSize: 35,
         currentIndex: _currentIndex,
         onTap: (index) =>  setCurrentIndex(index),
         items: const [
@@ -42,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
             label: 'scan'
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.help),
+            icon: Icon(Icons.help_outline),
             label: 'aide',
           ),
         ],
@@ -50,4 +57,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-

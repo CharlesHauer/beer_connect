@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../utils/theme.dart';
 
 class ButtonScan extends StatelessWidget {
   const ButtonScan({super.key});
@@ -11,7 +12,7 @@ class ButtonScan extends StatelessWidget {
         onPressed: () {},
         style: ElevatedButton.styleFrom(
           shape: const CircleBorder(),
-          backgroundColor: Colors.yellow,
+          backgroundColor: AppTheme.primaryYellow,
           side: const BorderSide(color: Colors.black, width: 3.5),
         ),
         child: const Icon(
