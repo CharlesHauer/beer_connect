@@ -1,4 +1,6 @@
+import 'package:beer_connect/app_routes.dart';
 import 'package:beer_connect/screens/home_screen.dart';
+import 'package:beer_connect/screens/search_screen.dart';
 import 'package:beer_connect/utils/theme.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +28,11 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       home: const HomeScreen(),
+      initialRoute: AppRoutes.initial,
+      routes: {
+        AppRoutes.home: (context) => const HomeScreen(),
+        AppRoutes.search: (context) => const SearchScreen(),
+      },
     );
   }
 }
