@@ -1,4 +1,6 @@
-import 'package:beer_connect/app_routes.dart';
+
+import 'package:beer_connect/route_builders/page_route_search.dart';
+import 'package:beer_connect/screens/search_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/theme.dart';
@@ -11,7 +13,7 @@ class ButtonSearch extends StatelessWidget {
     return SizedBox(
       height: 50,
       child: ElevatedButton(
-        onPressed: () {Navigator.pushNamed(context, AppRoutes.search);},
+        onPressed: () {Navigator.of(context).push(PageRouteSearch(page: const SearchScreen()));},
         style: ElevatedButton.styleFrom(
           shape: const CircleBorder(),
           backgroundColor: AppTheme.primaryYellow,
