@@ -34,11 +34,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          color: Colors.black,
+          color: AppTheme.greyBlack,
           boxShadow: [
             BoxShadow(
               blurRadius: 20,
-              color: Colors.black.withOpacity(.1),
+              color: AppTheme.greyBlack.withOpacity(.1),
             )
           ],
         ),

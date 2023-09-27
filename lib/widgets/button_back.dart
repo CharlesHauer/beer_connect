@@ -14,7 +14,7 @@ class ButtonBack extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           shape: const CircleBorder(),
           backgroundColor: AppTheme.primaryYellow,
-          side: const BorderSide(color: Colors.black, width: 1.5),
+          side: const BorderSide(color: AppTheme.greyBlack, width: 1.5),
         ),
         child: const Icon(
           Icons.arrow_back_rounded,
