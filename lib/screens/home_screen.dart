@@ -1,4 +1,4 @@
-import 'package:beer_connect/screens/help_screen.dart';
+import 'package:beer_connect/screens/suggest_screen.dart';
 import 'package:beer_connect/screens/scan_screen.dart';
 import 'package:beer_connect/utils/theme.dart';
 import 'package:line_icons/line_icons.dart';
@@ -29,12 +29,12 @@ class _HomeScreenState extends State<HomeScreen> {
       body: [
         const HistoryScreen(),
         const ScanScreen(),
-        const HelpScreen(),
+        const SuggestScreen(),
       ][_currentIndex],
 
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          color: AppTheme.greyBlack,
+          color: AppTheme.primaryYellow,
           boxShadow: [
             BoxShadow(
               blurRadius: 20,
@@ -49,24 +49,24 @@ class _HomeScreenState extends State<HomeScreen> {
               rippleColor: Colors.grey[300]!,
               hoverColor: Colors.grey[100]!,
               gap: 8,
-              activeColor: AppTheme.primaryYellow,
+              activeColor: AppTheme.greyBlack,
               iconSize: 35,
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               duration: const Duration(milliseconds: 400),
               tabBackgroundColor: Colors.white,
-              color: Colors.white,
+              color: AppTheme.greyBlack,
               tabs: const [
                 GButton(
                   icon: LineIcons.history,
-                  text: 'historique',
+                  text: 'HISTORIQUE',
                 ),
                 GButton(
                   icon: IconData(0xefe1, fontFamily: 'MaterialIcons'),
-                  text: 'scan',
+                  text: 'SCAN',
                 ),
                 GButton(
-                  icon: IconData(0xe309, fontFamily: 'MaterialIcons', matchTextDirection: true),
-                  text: 'aide',
+                  icon: IconData(0xe25b, fontFamily: 'MaterialIcons', matchTextDirection: true),
+                  text: 'SUGGESTION',
                 ),
               ],
               selectedIndex: _currentIndex,

@@ -1,6 +1,6 @@
-import 'package:beer_connect/widgets/button_scan.dart';
-import 'package:beer_connect/widgets/button_search.dart';
-import 'package:beer_connect/widgets/button_setting.dart';
+import 'package:beer_connect/widgets/button_stroke/button_scan_stroke.dart';
+import 'package:beer_connect/widgets/button_stroke/button_search_stroke.dart';
+import 'package:beer_connect/widgets/button_stroke/button_setting_stroke.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
@@ -65,8 +65,8 @@ class _ScanScreenState extends State<ScanScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    ButtonSearch(),
-                    ButtonSetting(),
+                    ButtonSearchStroke(),
+                    ButtonSettingStroke(),
                   ],
                 ),
               ),
@@ -74,7 +74,7 @@ class _ScanScreenState extends State<ScanScreen> {
           ),
           const Align(
             alignment: Alignment.bottomCenter,
-            child: ButtonScan()
+            child: ButtonScanStroke()
           )
         ],
       ),
