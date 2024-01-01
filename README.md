@@ -15,4 +15,12 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-Test Push
+Execution instructions: 
+    1-Open settings->plugins and install flutter and dart plugins
+    2-Download dart sdk: https://dart.dev/get-dart/archive
+    3-Unzip the package here: %USERPROFILE%\AppData\Local
+    4-Go to settings->languages & frameworks->Dart->Enable Dart support and put the dart sdk path
+    5-Do the same for flutter sdk: https://docs.flutter.dev/get-started/install
+    6-Reload the IDE
+    
+    
