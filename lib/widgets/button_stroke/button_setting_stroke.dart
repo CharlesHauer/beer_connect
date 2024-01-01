@@ -1,24 +1,24 @@
+import 'package:beer_connect/utils/theme.dart';
 import 'package:flutter/material.dart';
-import '../utils/theme.dart';
 
-class ButtonScan extends StatelessWidget {
-  const ButtonScan({super.key});
+class ButtonSettingStroke extends StatelessWidget {
+  const ButtonSettingStroke({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 160,
+      height: 40,
       child: ElevatedButton(
         onPressed: () {},
         style: ElevatedButton.styleFrom(
           shape: const CircleBorder(),
           backgroundColor: AppTheme.primaryYellow,
-          side: const BorderSide(color: AppTheme.greyBlack, width: 3.5),
+          side: const BorderSide(color: AppTheme.greyBlack, width: 1.5),
         ),
         child: const Icon(
-          Icons.document_scanner_outlined,
-          size: 50,
-          color: Colors.white,
+          Icons.settings,
+          size: 30,
+          color: AppTheme.greyBlack,
         ),
       ),
     );

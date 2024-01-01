@@ -7,18 +7,17 @@ class ButtonSetting extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 50,
+      height: 40,
       child: ElevatedButton(
         onPressed: () {},
         style: ElevatedButton.styleFrom(
           shape: const CircleBorder(),
           backgroundColor: AppTheme.primaryYellow,
-          side: const BorderSide(color: AppTheme.greyBlack, width: 1.5),
         ),
         child: const Icon(
           Icons.settings,
           size: 30,
-          color: Colors.white,
+          color: AppTheme.greyBlack,
         ),
       ),
     );

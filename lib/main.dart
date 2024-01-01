@@ -4,6 +4,7 @@ import 'package:beer_connect/screens/search_screen.dart';
 import 'package:beer_connect/utils/theme.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 Future<void> setupCameras() async {
   await availableCameras();
@@ -11,6 +12,10 @@ Future<void> setupCameras() async {
 
 
 Future<void> main() async {
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: AppTheme.primaryYellow,
+  ));
+
   WidgetsFlutterBinding.ensureInitialized();
   await setupCameras();
   runApp(const MyApp());
