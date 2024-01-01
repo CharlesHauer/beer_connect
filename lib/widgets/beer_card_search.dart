@@ -1,6 +1,7 @@
 import 'package:beer_connect/models/beer_model.dart';
 import 'package:beer_connect/utils/beer_type.dart';
 import 'package:beer_connect/utils/theme.dart';
+import 'package:beer_connect/widgets/rated_flag.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -107,6 +108,14 @@ class BeerCardSearch extends StatelessWidget {
             )
           ),
 
+          Builder(builder: (context) {
+            if (beer.isRated){
+              return const RatedFlag();
+            } else {
+              return Container();
+            }
+          }),
+
           Container(
             decoration: const BoxDecoration(
               color: AppTheme.greyWhite,
@@ -175,7 +184,7 @@ class BeerCardSearch extends StatelessWidget {
                 const Center(
                   child: Text(
                     '75%',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                   ),
                 )
               ]

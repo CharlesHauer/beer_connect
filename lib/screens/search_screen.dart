@@ -5,23 +5,21 @@ import 'package:beer_connect/widgets/beer_card_search.dart';
 import 'package:beer_connect/widgets/button_back.dart';
 import 'package:beer_connect/widgets/button_setting.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-
     BeerModel beer = BeerModel(
-        id: 1,
-        abv: 12.5,
-        beerType: BeerType.blonde,
-        description: 'description',
-        isRated: false,
-        name: 'Leffe',
-        price: 3.05,
-      );
+      id: 1,
+      abv: 12.5,
+      beerType: BeerType.blonde,
+      description: 'description',
+      isRated: true,
+      name: 'Leffe',
+      price: 3.05,
+    );
 
     return Scaffold(
       body: SafeArea(
@@ -30,15 +28,11 @@ class SearchScreen extends StatelessWidget {
             Container(
               decoration: const BoxDecoration(
                   border: Border(
-                    bottom: BorderSide(
-                        color: AppTheme.primaryOrange,
-                        width: 1.5
-                    ),
+                    bottom:
+                        BorderSide(color: AppTheme.primaryOrange, width: 1.5),
                   ),
-                  color: AppTheme.greyWhite
-              ),
+                  color: AppTheme.greyWhite),
               height: 60,
-
               child: const Row(
                 children: [
                   Padding(padding: EdgeInsets.only(left: 10)),
@@ -63,23 +57,48 @@ class SearchScreen extends StatelessWidget {
                 ],
               ),
             ),
-
             const Padding(padding: EdgeInsets.only(bottom: 20)),
-
-            const SizedBox(
+            SizedBox(
               width: 300,
               child: TextField(
                 decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'nom',
+                  prefixIcon: const Icon(Icons.search),
+                  suffixIcon: IconButton(
+                      onPressed: () {}, icon: const Icon(Icons.settings_input_component)),
+                  hintText: 'nom',
                 ),
               ),
             ),
-
             const Padding(padding: EdgeInsets.only(bottom: 20)),
-
-
-            BeerCardSearch(beer: beer,),
+            Expanded(
+                child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  BeerCardSearch(
+                    beer: beer,
+                  ),
+                  BeerCardSearch(
+                    beer: beer,
+                  ),
+                  BeerCardSearch(
+                    beer: beer,
+                  ),
+                  BeerCardSearch(
+                    beer: beer,
+                  ),
+                  BeerCardSearch(
+                    beer: beer,
+                  ),
+                  BeerCardSearch(
+                    beer: beer,
+                  ),
+                  BeerCardSearch(
+                    beer: beer,
+                  ),
+                  const Padding(padding: EdgeInsets.only(bottom: 30)),
+                ],
+              ),
+            )),
           ],
         ),
       ),
