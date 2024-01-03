@@ -1,7 +1,7 @@
 import 'package:beer_connect/utils/beer_type.dart';
 
 class BeerModel {
-  final int id;
+  //final int id;
   final String name;
   final BeerType beerType;
   final String origin;
@@ -10,7 +10,7 @@ class BeerModel {
   final String description;
 
   BeerModel({
-    required this.id,
+    //required this.id,
     required this.name,
     required this.beerType,
     required this.origin,

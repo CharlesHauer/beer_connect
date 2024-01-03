@@ -17,7 +17,7 @@ class BeerCardSearch extends StatelessWidget {
       ),
       elevation: 4,
       color: AppTheme.greyWhite,
-      margin: const EdgeInsets.only(top: 25, left: 20, right: 20),
+      margin: const EdgeInsets.only(bottom: 15, left: 10, right: 10),
       child: Row(
         children: [
 

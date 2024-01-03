@@ -5,6 +5,7 @@ import 'package:beer_connect/widgets/beer_card_search.dart';
 import 'package:beer_connect/widgets/button_back.dart';
 import 'package:beer_connect/widgets/button_setting.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -12,7 +13,7 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     BeerModel beer = BeerModel(
-      id: 1,
+      //id: 1,
       abv: 12.5,
       beerType: BeerType.blonde,
       description: 'description',
@@ -69,36 +70,34 @@ class SearchScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const Padding(padding: EdgeInsets.only(bottom: 20)),
+            const Padding(padding: EdgeInsets.only(bottom: 5)),
+
             Expanded(
-                child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  BeerCardSearch(
-                    beer: beer,
-                  ),
-                  BeerCardSearch(
-                    beer: beer,
-                  ),
-                  BeerCardSearch(
-                    beer: beer,
-                  ),
-                  BeerCardSearch(
-                    beer: beer,
-                  ),
-                  BeerCardSearch(
-                    beer: beer,
-                  ),
-                  BeerCardSearch(
-                    beer: beer,
-                  ),
-                  BeerCardSearch(
-                    beer: beer,
-                  ),
-                  const Padding(padding: EdgeInsets.only(bottom: 30)),
-                ],
+              child: StreamBuilder(
+                stream: FirebaseFirestore.instance.collection('beer_collection').orderBy('Name').snapshots(),
+                builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+                  if (!snapshot.hasData) {
+                    return Container();
+                  }
+                  return ListView(
+                    padding: const EdgeInsets.all(10),
+                    children: snapshot.data!.docs.map((DocumentSnapshot document) {
+                      Map<String, dynamic> data = document.data() as Map<String, dynamic>;
+                      return BeerCardSearch(
+                        beer: BeerModel(
+                            name: data['Name'].toString(),
+                            beerType: BeerTypeExtension.fromString(data['BeerType']),
+                            origin: data['Origin'],
+                            abv: double.parse(data['Abv'].toString()),
+                            isRated: data['IsRated'],
+                            description: data['Description']
+                        ),
+                      );
+                    }).toList(),
+                  );
+                }
               ),
-            )),
+            ),
           ],
         ),
       ),
