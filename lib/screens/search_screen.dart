@@ -18,7 +18,7 @@ class SearchScreen extends StatelessWidget {
       description: 'description',
       isRated: true,
       name: 'Leffe',
-      price: 3.05,
+      origin: 'Belgique',
     );
 
     return Scaffold(

@@ -79,14 +79,14 @@ class BeerCardSearch extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      const Padding(padding: EdgeInsets.only(right: 10)),
+                      const Padding(padding: EdgeInsets.only(right: 12)),
                       SvgPicture.asset(
-                        'assets/icon/price_icon.svg',
-                        height: 15,
+                        'assets/icon/flag_icon.svg',
+                        height: 13,
                       ),
-                      const Padding(padding: EdgeInsets.only(right: 15)),
+                      const Padding(padding: EdgeInsets.only(right: 12)),
                       Text(
-                        '${beer.price} €/L',
+                        beer.origin,
                       )
                     ],
                   ),
