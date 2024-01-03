@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "427845072707",
+    "firebase_url": "https://beerconnect-60c75-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "beerconnect-60c75",
+    "storage_bucket": "beerconnect-60c75.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427845072707:android:0f94bfc26ad4a586b661f6",
+        "android_client_info": {
+          "package_name": "beer.connect.beer_connect"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArfAuXcoz9oW2Jk-nWmvzNQQDYK7PIEJA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

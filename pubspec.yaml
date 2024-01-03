@@ -33,8 +33,9 @@ dependencies:
   camera: ^0.10.5+2
   google_nav_bar: ^5.0.6
   line_icons: ^2.0.3
-  #flutter_launcher_icons: ^0.13.1
   flutter_svg: ^0.21.0
+  firebase_core: 2.24.2
+  cloud_firestore: ^4.13.6
 
 
 
@@ -79,6 +80,7 @@ flutter:
     - assets/icon/degree_icon.svg
     - assets/icon/glass_icon.svg
     - assets/icon/price_icon.svg
+    - assets/icon/flag_icon.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
