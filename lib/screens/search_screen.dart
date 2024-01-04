@@ -12,16 +12,6 @@ class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    BeerModel beer = BeerModel(
-      //id: 1,
-      abv: 12.5,
-      beerType: BeerType.blonde,
-      description: 'description',
-      isRated: true,
-      name: 'Leffe',
-      origin: 'Belgique',
-    );
-
     return Scaffold(
       body: SafeArea(
         child: Column(
