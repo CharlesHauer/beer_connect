@@ -7,7 +7,7 @@ class RatedFlag extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppTheme.greyWhite,
+      color: Colors.white,
       height: 120,
       child: const Row(
         children: [

@@ -36,7 +36,7 @@ dependencies:
   flutter_svg: ^0.21.0
   firebase_core: 2.24.2
   cloud_firestore: ^4.13.6
-
+  percent_indicator: ^4.2.3
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -81,6 +81,16 @@ flutter:
     - assets/icon/glass_icon.svg
     - assets/icon/price_icon.svg
     - assets/icon/flag_icon.svg
+
+    #picture
+    - assets/picture/corona.png
+    - assets/picture/desperados.png
+    - assets/picture/leffe.png
+    - assets/picture/duvel.png
+    - assets/picture/heineken.png
+
+    #bakground
+    - assets/background/back_description.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
