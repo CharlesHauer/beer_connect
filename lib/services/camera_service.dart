@@ -2,6 +2,7 @@ import 'package:camera/camera.dart';
 
 class CameraService {
   CameraController? _cameraController;
+  late Future<void> _initializeControllerFuture;
 
   CameraController? get cameraController => _cameraController;
 
@@ -10,9 +11,10 @@ class CameraService {
     if (cameras.isNotEmpty) {
       _cameraController = CameraController(
         cameras[0],
-        ResolutionPreset.medium,
+        ResolutionPreset.max,
       );
-      await _cameraController!.initialize();
+      _initializeControllerFuture = _cameraController!.initialize();
+      await _initializeControllerFuture;
     }
   }
 

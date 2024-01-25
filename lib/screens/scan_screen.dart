@@ -1,9 +1,9 @@
+import 'dart:io';
 import 'package:beer_connect/widgets/button_stroke/button_scan_stroke.dart';
 import 'package:beer_connect/widgets/button_stroke/button_search_stroke.dart';
 import 'package:beer_connect/widgets/button_stroke/button_setting_stroke.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-
 import '../services/camera_service.dart';
 
 class ScanScreen extends StatefulWidget {
@@ -72,9 +72,11 @@ class _ScanScreenState extends State<ScanScreen> {
               ),
             ],
           ),
-          const Align(
+          Align(
             alignment: Alignment.bottomCenter,
-            child: ButtonScanStroke()
+            child: ButtonScanStroke(
+              cameraService: _cameraService,
+            ),
           )
         ],
       ),

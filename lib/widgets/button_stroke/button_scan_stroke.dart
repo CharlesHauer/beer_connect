@@ -1,15 +1,31 @@
+import 'package:beer_connect/screens/show_scan_screen.dart';
 import 'package:flutter/material.dart';
+import '../../services/camera_service.dart';
 import '../../utils/theme.dart';
 
 class ButtonScanStroke extends StatelessWidget {
-  const ButtonScanStroke({super.key});
+  final CameraService _cameraService;
+
+  const ButtonScanStroke({
+    Key? key,
+    required CameraService cameraService,
+  })   : _cameraService = cameraService,
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final localContext = context;
     return SizedBox(
       height: 160,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () async {
+          try {
+            final image = await _cameraService.cameraController!.takePicture();
+            Navigator.push(localContext, MaterialPageRoute(builder: (context) => ShowScanScreen(imagePath: image.path)));
+          } catch (e) {
+            print(e);
+          }
+        },
         style: ElevatedButton.styleFrom(
           shape: const CircleBorder(),
           backgroundColor: AppTheme.primaryYellow,
